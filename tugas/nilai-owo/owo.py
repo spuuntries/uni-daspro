@@ -30,7 +30,6 @@ else:
     absdiff = diff * -1 if diff < 1 else diff
     hour, rem = divmod(absdiff, 3600)
     minute, second = divmod(rem, 60)
-    diffarr = [hour, minute, second]
     if diff > 0:
         print(
             f"Owo memiliki sisa waktu{f' {hour} jam' if hour > 0 else ''}{f' {minute} menit' if minute > 0 else ''}{f' {second} detik' if second > 0 else ''}."
