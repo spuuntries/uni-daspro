@@ -35,13 +35,14 @@ print(f"TITIK PENGAWAS: kuadran {' '.join([str(quad(*t)) for t in inp])}")
 ins = "Yo Ndak Tau Kok Tanya Saya"
 spec = ""
 
+# Luas bj dengan tiap 2 titik
 t1 = area(bj, inp[0], inp[1])
 t2 = area(bj, inp[1], inp[2])
 t3 = area(bj, inp[2], inp[0])
 
 if t1 + t2 + t3 == tot:
     ins = "KEPUNG BJARKAN!!!"
-    if len(list(filter(lambda x: x == 0, [t1, t2, t3]))) > 1:
+    if len(list(filter(lambda x: x == 0, [t1, t2, t3]))) > 1:  # Luas 0 = garis
         spec = "Dia Segaris Dengan Kalian"
     else:
         spec = "Tapi Dia Tidak Segaris Dengan Kalian"
@@ -52,6 +53,7 @@ for e in [(inp[i], inp[j]) for i in range(len(inp)) for j in range(i + 1, len(in
     p1p2 = dist(p1, p2)
     p2p3 = dist(p2, bj)
     p1p3 = dist(p1, bj)
+    # Kalo ab + bc = ac -> segaris
     if p1p2 + p2p3 == p1p3:
         spec = "Dia Masih Segaris Dengan Kalian"
 
