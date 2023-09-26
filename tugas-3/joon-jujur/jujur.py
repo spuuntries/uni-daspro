@@ -25,6 +25,6 @@ def c_pal(n):
 
 for i, inp in enumerate(inputs):
     if pal(inp) and is_prime(inp):
-        print(f"#{i+1}: {inp}")
+        print(f"#{i + 1}: {inp}")
     else:
-        print(f"#{i+1}: {c_pal(inp)}")
+        print(f"#{i + 1}: {c_pal(inp)}")
