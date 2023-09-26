@@ -31,7 +31,11 @@ def intersect(a, b, c, d):
         (d3 > 0 and d4 < 0) or (d3 < 0 and d4 > 0)
     ):
         return True
-    # Jika posisi relatif terhadap garis 0/tepat pada garis, dan posisi titik berada pada garis, maka kolinier dan berarti berpotongan
+    # Jika posisi relatif terhadap garis 0,
+    # dan posisi titik berada pada segmen garis
+    # (dicek apakah ada di segmen garis karena posisi relatif 0 berarti kolinier,
+    # tetapi belum tentu berpotongan),
+    # maka kolinier dan berpotongan
     elif d1 == 0 and on_segm(a, b, c):
         return True
     elif d2 == 0 and on_segm(a, b, d):
