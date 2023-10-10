@@ -40,11 +40,7 @@ def spiralOrder(matrix):
 # 5  6  7
 # 9  10 11
 
-# [1, 2, 3, 4, 8, 12, 16, 15, 14, 13] # 4. Dari bawah, ambil kolom pertama dari tiap baris
-# 5  6  7
-# 9  10 11
-
-# [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5] # 5. Dari bawah, ambil kolom pertama dari tiap baris
+# [1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5] # 4. Dari bawah, ambil kolom pertama dari tiap baris
 # 6  7
 # 10 11
 
