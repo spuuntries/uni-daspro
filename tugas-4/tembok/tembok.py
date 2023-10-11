@@ -15,6 +15,8 @@ def solve(N):
     for i in range(4, N + 1):
         f[i] = f[i - 1] + 4 * f[i - 2] + 2 * f[i - 3]
 
+    return f[N]
+
 
 for N in inputs:
     print(solve(N))
