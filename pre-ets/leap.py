@@ -15,6 +15,9 @@ def day(m, d, y):
     return res
 
 
+# Initial submission didn't have this monthmapping,
+# so you can modify the input lines below to not have the .index() call,
+# it's honestly just the same logic lol
 monthmap = [
     "January",
     "February",
