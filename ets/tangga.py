@@ -26,5 +26,5 @@ for i, e in enumerate(inputs):
             for i in range(e[1]):
                 print(f"{' '*i}{'#'*pad_w}{dot}{'#'*pad_w}")
         case "left":
-            for i in range(e[1], 0, -1):
+            for i in range(e[1] - 1, -1, -1):
                 print(f"{' '*i}{'#'*pad_w}{dot}{'#'*pad_w}")
