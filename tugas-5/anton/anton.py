@@ -1,8 +1,7 @@
 n = int(input())
-base_case = [0, 1]
 
 
-def why(x):  # We really don't need this istg
+def why(base_case, x):  # We really don't need this istg
     for i in range(1, x):
         if x <= len(
             base_case
@@ -14,4 +13,4 @@ def why(x):  # We really don't need this istg
     return base_case
 
 
-print(sum(why(n)[0:n]) * 125)
+print(sum(why([0, 1], n)[0:n]) * 125)

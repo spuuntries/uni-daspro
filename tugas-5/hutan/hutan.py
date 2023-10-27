@@ -1,9 +1,7 @@
 n = int(input())
-base_case = [0, 1, 2]
-# The sequence is a tribonacci sequence, so at least 3 samples is necessary to construct it
 
 
-def why(x):  # YES.
+def why(base_case, x):  # YES.
     for i in range(1, x):
         if x <= len(base_case):
             break  # See anton.py
@@ -11,4 +9,5 @@ def why(x):  # YES.
     return base_case
 
 
-print(why(n)[n - 1])
+print(why([0, 1, 2], n)[n - 1])
+# The sequence is a tribonacci sequence, so at least 3 samples is necessary to construct it
