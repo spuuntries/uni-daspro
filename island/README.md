@@ -60,7 +60,7 @@ Here's an explainer on my implementation
 
 3. After all cells in the matrix have been processed, the `track` dictionary contains all the islands in the matrix, with each key representing an island and each value representing the cells in that island.
 
-**This sounds like unnecessarily complicated? Why?**  
+**This sounds like the solution's unnecessarily complicated? Why?**  
 Indeed 'twas, yes, :)
 
 ## **O(n)?**
