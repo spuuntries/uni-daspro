@@ -41,14 +41,19 @@ def island(track, mat, r, c):
         if not len(tracklist):
             track[f"{r}|{c}"] = [e]
         else:
-            if f"{r}|{c}" not in tracklist[-1][0].split(","):
-                key = (
-                    tracklist[-1][0] + f",{r}|{c}"
-                    if f"{r}|{c}" != tracklist[-1][0]
-                    else f"{r}|{c}"
-                )
-                track[key] = track[tracklist[-1][0]] + [e]
-                del track[tracklist[-1][0]]
+            key = (
+                ",".join(map(lambda x: x[0], tracklist)) + f",{r}|{c}"
+                if f"{r}|{c}" != tracklist[-1][0]
+                else f"{r}|{c}"
+            )
+
+            def flatten(l):
+                return [item for sublist in l for item in sublist]
+
+            temp = flatten([e[1] for e in tracklist])
+            for k in tracklist:
+                del track[k[0]]
+            track[key] = temp + [e]
 
     if c < len(mat[0]) - 1:
         c += 1
@@ -58,6 +63,6 @@ def island(track, mat, r, c):
     return island(track, mat, r, c)
 
 
-print(len(island(track, mat, 0, 0).values()))
-print(max([len(e) for e in island(track, mat, 0, 0).values()]))
-print(min([len(e) for e in island(track, mat, 0, 0).values()]))
+print(len(island({}, mat, 0, 0).values()))
+print(max([len(e) for e in island({}, mat, 0, 0).values()]))
+print(min([len(e) for e in island({}, mat, 0, 0).values()]))

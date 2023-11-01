@@ -18,7 +18,7 @@ it'd output:
 ```
 3 islands
 max 3
-min 2
+min 1
 ```
 
 My prof. gave an explainer on flood fill to solve this, but I didn't really understand it lol.

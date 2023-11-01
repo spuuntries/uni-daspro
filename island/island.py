@@ -35,13 +35,20 @@ for r, h in enumerate(mat):
             if not len(tracklist):
                 track[f"{r}|{c}"] = [e]
             else:
-                key = (
-                    tracklist[-1][0] + f",{r}|{c}"
-                    if f"{r}|{c}" != tracklist[-1][0]
-                    else f"{r}|{c}"
-                )
-                track[key] = track[tracklist[-1][0]] + [e]
-                del track[tracklist[-1][0]]
+                if f"{r}|{c}" not in tracklist[-1][0].split(","):
+                    key = (
+                        ",".join(map(lambda x: x[0], tracklist)) + f",{r}|{c}"
+                        if f"{r}|{c}" != tracklist[-1][0]
+                        else f"{r}|{c}"
+                    )
+
+                    def flatten(l):
+                        return [item for sublist in l for item in sublist]
+
+                    temp = flatten([e[1] for e in tracklist])
+                    for k in tracklist:
+                        del track[k[0]]
+                    track[key] = temp + [e]
 
 print(len(track.values()))
 print(max([len(e) for e in track.values()]))
