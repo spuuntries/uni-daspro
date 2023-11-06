@@ -2,7 +2,7 @@ n = int(input())
 inputs = [input().split(" ") for _ in range(n)]
 
 
-def spiralOrder(matrix):
+def spiralOrder(matrix: list[list[int]]):
     result = []
     while matrix:
         result += matrix.pop(
