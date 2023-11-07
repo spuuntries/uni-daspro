@@ -11,7 +11,8 @@ for i, r in enumerate(inputs):
         if e == -1:
             to_col.append(j)
     if len(to_col) > 0:
-        col_arr.append(*to_col)
+        for x in to_col:
+            col_arr.append(x)
         row_arr.append(i)
 
 hit = set()
