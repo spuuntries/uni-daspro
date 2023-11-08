@@ -5,14 +5,11 @@ n = int(input())
 def find_route(n, t=0):
     if n == 1:
         return t
-    route = None
     if n % 3 == 0:
-        route = n // 3
+        return find_route(n // 3, t + 1)
     if n % 2 == 0:
-        route = n // 2
-    if not route:
-        route = n - 1
-    return find_route(route, t + 1)
+        return find_route(n // 2, t + 1)
+    return find_route(n - 1, t + 1)
 
 
 print(find_route(n))
