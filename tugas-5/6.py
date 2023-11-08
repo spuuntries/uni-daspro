@@ -3,7 +3,6 @@ n = int(input())
 
 # Find shortest route to 1
 def find_route(n, t=0):
-    print(n)
     if n == 1:
         return t
     route = None
