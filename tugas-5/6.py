@@ -3,15 +3,17 @@ n = int(input())
 
 # Find shortest route to 1
 def find_route(n, t=0):
+    print(n)
     if n == 1:
         return t
-    routes = []
+    route = None
     if n % 3 == 0:
-        routes.append(n // 3)
+        route = n // 3
     if n % 2 == 0:
-        routes.append(n // 2)
-    routes.append(n - 1)
-    return find_route(min(routes), t + 1)
+        route = n // 2
+    if not route:
+        route = n - 1
+    return find_route(route, t + 1)
 
 
 print(find_route(n))
