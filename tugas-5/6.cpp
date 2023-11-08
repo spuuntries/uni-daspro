@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Find shortest route to 1
 int find_route(int n, int t = 0)
 {
     if (n == 1)
