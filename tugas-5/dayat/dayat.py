@@ -73,7 +73,7 @@ def bfs(graph, source, target, parents=None, visited=None, queue=None):
     if parents is None:
         parents = {}
 
-    current = queue.pop()
+    current = queue.pop(0)  # FIFO instead of LIFO
     visited.append(current)
 
     if current == target:
