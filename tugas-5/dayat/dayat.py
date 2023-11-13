@@ -95,6 +95,9 @@ def bfs(graph, source, target, parents=None, visited=None, queue=None):
 
 
 graph = mtg(maze)
+if list(filter(lambda x: x is None, graph)):
+    print("tempat mulai atau tempat tujuan tak tergambar")
+    exit(1)
 # print(graph[1], graph[2])
 
 res = bfs(graph[0], graph[1], graph[2])
@@ -111,4 +114,4 @@ def modify_maze(maze, modifications):
     return modify_maze(maze, modifications)
 
 
-print("\n".join(["".join(r) for r in modify_maze(maze.copy(), res.copy())]), end="")
+print("\n".join(["".join(r) for r in modify_maze(maze.copy(), res.copy())]))
