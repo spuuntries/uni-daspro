@@ -1,5 +1,5 @@
 # Since graph is unweighted, a BFS is enough, fwiw might be slower, idrk.
-n, _ = map(int, input().split())
+_, n = map(int, input().split())
 maze = [list(input()) for _ in range(n)]
 
 
