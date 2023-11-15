@@ -15,7 +15,7 @@ def mtg(maze):
                 node = (i, j)
                 graph[node] = []
 
-                # Check neighboring cells (up, down, right, left)
+                # Check neighboring cells (down, up, right, left)
                 for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                     ni, nj = i + dx, j + dy
                     if 0 <= ni < rows and 0 <= nj < cols and maze[ni][nj] != "#":
