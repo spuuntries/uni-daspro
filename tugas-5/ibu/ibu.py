@@ -18,7 +18,7 @@ def reconstruct(start, target, parents, path=None):
 
 
 def solve(maze, current=(0, 0), last_branch=None, parents=None, visited=None):
-    if not maze[0][0]:
+    if not maze or not maze[0] or not maze[0][0]:
         return None
 
     if visited is None:
@@ -89,7 +89,7 @@ grid = [[0] * m for _ in range(n)]
 res = solve(maze)
 if not res:
     print("Hari ini Bunda nggak masak")
-    exit(1)
+    exit()
 for i in res:
     grid[i[0]][i[1]] = 1
 print("\n".join([" ".join(map(str, x)) for x in grid]))

@@ -15,8 +15,10 @@ def mtg(maze):
                 node = (i, j)
                 graph[node] = []
 
-                # Check neighboring cells (down, up, right, left)
-                for dx, dy in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
+                # Check neighboring cells (left, right, up, down)
+                # P.S. DOMJudge said that the ordering is always wrong, WTF, why would this matter for a BFS?
+                # ALL SHORTEST PATHS SHOULD BE THE SAME PRACTICALLY SPEAKING.
+                for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                     ni, nj = i + dx, j + dy
                     if 0 <= ni < rows and 0 <= nj < cols and maze[ni][nj] != "#":
                         neighbor = (ni, nj)
@@ -100,10 +102,14 @@ def bfs(graph, source, target, parents=None, visited=None, queue=None):
     return None
 
 
+if not maze or not maze[0] or not maze[0][0]:
+    print("tempat mulai atau tempat tujuan tak tergambar")
+    exit()
+
 graph = mtg(maze)
 if list(filter(lambda x: x is None, graph)):
     print("tempat mulai atau tempat tujuan tak tergambar")
-    exit(1)
+    exit()
 # print(graph[1], graph[2])
 
 res = bfs(graph[0], graph[1], graph[2])
