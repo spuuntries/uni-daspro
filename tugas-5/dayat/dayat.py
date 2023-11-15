@@ -87,6 +87,12 @@ def bfs(graph, source, target, parents=None, visited=None, queue=None):
     parents = rassign(
         parents, list(zip(elig_neighbors.copy(), [current] * len(elig_neighbors)))
     )
+    # This parents part is a bit confusing, mostly because I was trying to stay recursive,
+    # see `ibu/ibu.py` parent assignment mechanism for a "better" flow,
+    # so here's a breakdown:
+    # 1.) [(node1), (node2) ...] [(current), (current) ...] => These two get zipped together
+    # 2.) [((node1), (current)), ((node2), (current)) ...]  => Zipped output
+    # 3.) {(node1): (current), (node2): (current) ...}      => Output of rassign()
 
     if queue:
         return bfs(graph, source, target, parents, visited, queue)

@@ -1,3 +1,5 @@
+# Practically a DFS implementation, just that the valid moves are only down and right.
+# BFS *can* be utilized here, I just wanted to try DFS because it didn't specify shortest path in the problem description.
 m, n = map(int, input().split())
 maze = [list(map(int, input().split())) for _ in range(n)]
 
@@ -52,6 +54,14 @@ def solve(maze, current=(0, 0), last_branch=None, parents=None, visited=None):
             ),
         )
     )
+    # This bit is a bit ugly (but is actually more fun to read ngl),
+    # I recommend looking at mtg() in `dayat/dayat.py` for better flow,
+    # but basically:
+    # current = (y, x)                                    => y is inverted, so going down is actually +1
+    # 1.) {(y + 1, x): node1, (y, x + 1): node2}          => If not at walls of maze, but if so, the entry becomes None
+    # 2.) [((y + 1, x), node1), ((y, x + 1), node2)]      => dict.items()
+    # 3.) [((y + 1, x), node1), ((y, x + 1), node2)]      => Filter out Nones and all in visited.
+    # 4.) [(y + 1, x), (y, x + 1)]                        => Grab the first element of every tuple
 
     if current not in visited:
         visited += [current]
@@ -69,6 +79,9 @@ def solve(maze, current=(0, 0), last_branch=None, parents=None, visited=None):
     for n in neighbors:
         parents[n] = current
 
+    # The neighbors[-1] is actually crucial in determining which path the algorithm chooses first,
+    # (and consequently, the path you end up with), since in this case we'll always check the route to the right first.
+    # But really, it doesn't matter if you're not worried about the resulting path.
     return solve(maze, neighbors[-1], last_branch, parents, visited)
 
 
