@@ -10,6 +10,7 @@ sys.setrecursionlimit(10000)
 p, t = map(int, input().split())
 
 
+# @profile
 def ways(p, t, memo={}, i=1, c=[], res=[], adj=False):
     if p == t:
         return []

@@ -1,9 +1,6 @@
 # Got the base algorithm from Kevin,
 # modified to return the resulting array of combinations.
 # Pure recursive.
-import sys
-
-sys.setrecursionlimit(10000)
 p, t = map(int, input().split())
 
 
@@ -14,6 +11,7 @@ def rprepend(i, ways):
         return [[i] + ways[0]] + rprepend(i, ways[1:])
 
 
+# @profile
 def count_ways(p, t, i=1, target=100):
     if p == target:
         return [[]] if i == 1 else []
