@@ -45,7 +45,7 @@ So wat happun nex? Do me keep tryin me bes? Do me push thru to becom da bes? Na 
 
 So I caved in, gave up on finding all possible combinations whilst staying low on memory footprint, and just, worked on that "find number of possibilities" algorithm.
 
-After a while of trying, I arrived on a similar flow to his regardless of what I did, so I just grabbed his and added memoization + QoL to reduce the footprint even further.
+After a while of trying, I arrived on a similar flow to Kevin's regardless of what I did, so I just grabbed his and added memoization + QoL to reduce the footprint even further.
 
 ## Well damn, disappointment.
 
