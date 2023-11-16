@@ -23,7 +23,7 @@ _EXPONENTIAL GROWTH_ on the call stack, this can lead to a multitude of issues, 
 
 Now, I knew this, but what _I_ interpreted from the problem definition, was to get _all_ combinations, and not the total number of _possible_ combinations. So, `sys.setrecursionlimit()` it is.
 
-I realized halfway through that life would've been a much better and easier time had I taken this other route. Buuuuuut, being the egotisitical prick that I am, I tried to force my way through _anyway_, mostly because I alrd did my initial implementation (see [./100.py](./100py)), and that it just, didn't "click" in my head to do this.
+I realized halfway through that life would've been a much better and easier time had I taken this other route. Buuuuuut, being the egotisitical prick that I am, I tried to force my way through _anyway_, mostly because I alrd did my initial implementation (see [./100.py](./100.py)), and that it just, didn't "click" in my head to do this.
 
 So, [after my initial implementation broke down and cried on the side of the road](#below-is-my-initial-implementation-uses-a-lot-of-memory-and-prime-example-of-what-i-meant-by-exponential-see-the-lines-that-deallocated-700-ish-mibs-lol), I tried again. The first thought that came to mind was reducing the number of memory overheads, but how?
 
