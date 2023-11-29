@@ -1,5 +1,5 @@
 m, n = map(int, input().split())
-matrix = [input().split() for _ in range(m)]
+matrix = [list(input()) for _ in range(m)]
 number = 0
 
 for i in range(m):
